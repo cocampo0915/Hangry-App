@@ -1,0 +1,36 @@
+/* reset css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    display: flex;
+    align-items: center; /* align items on the cross-axis */
+    height: 3rem;
+}
+
+header {
+    padding-left: 15px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 1px 1px 3px 2px #aaaaaa;
+}
+
+main {
+    flex-grow: 1;    /* pushes down footer, pushes up on header. creates our sticky footer*/
+}
+
+
+
+footer {
+    justify-content: center; /* align items on the main axis */
+}
