@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script defer src="./js/script.js"></script>
-    <title>Project 1 Web App</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	 crossorigin="anonymous">
+
+	</script>
+	<script defer src="./js/script.js">
+
+	</script>
+	<title>Project 1 Web App</title>
 </head>
+
 <body>
-    <header>
-        <h1>HANGRY APP</h1>
-    </header>
-    <main>
-        <h2>Can't decide what to make for dinner?</h2>
-        <h3>This app can help!</h3>
-        <br>
+	<header>
+		<h1>HANGRY APP</h1>
+	</header>
+	<main>
+		<h2>Can't decide what to make for dinner?</h2>
+		<h3>This app can help!</h3>
+		<br>
         <br>
       <form action="/action_page.php">
-        <label for="cuisine">Choose a Cuisine:</label>
-        <select name="cuisine" id="cuisine">
+        <label for="cars">Choose a Cuisine:</label>
+        <select name="cars" id="cars">
             <option value="American">American</option>
             <option value="Italian">Italian</option>
             <option value="Chinese">Chinese</option>
             <option value="Japanese">Japanese</option>
         </select>
-        <label for="food">Choose a Food:</label>
-        <select name="food" id="food">
+        <label for="cars">Choose a Food:</label>
+        <select name="cars" id="cars">
             <option value="chicken">Chicken</option>
             <option value="beef">Beef</option>
             <option value="pork">Pork</option>
             <option value="seafood">Seafood</option>
-            <option value="Vegetarian">Vegatarian</option>
         </select>
         <br><br>
-        <input type="submit" value="I'm hungry! Give me food already!">
+        <input id="submit" type="submit" value="I'm hungry! Give me food already!">
       </form>
         <br><br>
         <p>Still can't decide? That's alright, click the button below for a random meal!</p>
@@ -43,13 +49,17 @@
         <button id='random-meal'>Random Meal</button>
         <br>
         <section id="api">
-          <div id="recipe-name">Placeholder</div>
+          <div id="recipe-name"></div>
+          <div class="row" id="row1">
+            <div class="column" id="recipe-img"></div>
+            <br>
+            <div class="column" id="recipe-ingredients"></div> 
+          </div>
+          <div class="row" id="row2">
+            <div id="recipe-instructions"></div>
+          </div>
           <br>
-          <div id="recipe-img"></div>
-          <br>
-          <div id="recipe-instructions">Placeholder</div>
-          <br>
-          <div id="recipe-video"></div>
+          <div class="row" id="recipe-video"></div>
         </section>
     </main>
     <footer>

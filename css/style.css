@@ -34,14 +34,44 @@ main {
     justify-content: center;
     margin: 100px 0 0 0;
 }
-
+h4 {
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
 #api {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin: auto;
   width: 50%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0 15px 0;
+  justify-content: space-evenly;
+}
+
+#recipe-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#recipe-ingredients {
+  margin: 0 aut0;
 }
 
 footer {
