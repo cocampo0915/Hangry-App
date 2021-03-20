@@ -11,11 +11,45 @@
 </head>
 <body>
     <header>
-        <h1>Project 1 Web App</h1>
+        <h1>HANGRY APP</h1>
     </header>
     <main>
-        <section id="news">
-
+        <h2>Can't decide what to make for dinner?</h2>
+        <h3>This app can help!</h3>
+        <br>
+        <br>
+      <form action="/action_page.php">
+        <label for="cuisine">Choose a Cuisine:</label>
+        <select name="cuisine" id="cuisine">
+            <option value="American">American</option>
+            <option value="Italian">Italian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese">Japanese</option>
+        </select>
+        <label for="food">Choose a Food:</label>
+        <select name="food" id="food">
+            <option value="chicken">Chicken</option>
+            <option value="beef">Beef</option>
+            <option value="pork">Pork</option>
+            <option value="seafood">Seafood</option>
+            <option value="Vegetarian">Vegatarian</option>
+        </select>
+        <br><br>
+        <input type="submit" value="I'm hungry! Give me food already!">
+      </form>
+        <br><br>
+        <p>Still can't decide? That's alright, click the button below for a random meal!</p>
+        <br>
+        <button id='random-meal'>Random Meal</button>
+        <br>
+        <section id="api">
+          <div id="recipe-name">Placeholder</div>
+          <br>
+          <div id="recipe-img"></div>
+          <br>
+          <div id="recipe-instructions">Placeholder</div>
+          <br>
+          <div id="recipe-video"></div>
         </section>
     </main>
     <footer>
