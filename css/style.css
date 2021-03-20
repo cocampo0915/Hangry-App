@@ -77,3 +77,14 @@ h4 {
 footer {
     justify-content: center; /* align items on the main axis */
 }
+
+@media only screen and (max-width: 800px) {
+    #api {
+      width: 90%;
+    }
+    
+    #row1 {
+      flex-direction: column;
+    }
+  }
+  
