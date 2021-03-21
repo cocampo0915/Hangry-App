@@ -1,5 +1,5 @@
 /* reset css */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
 
 * {
     box-sizing: border-box;
@@ -20,7 +20,7 @@ header, footer {
 }
 
 header {
-    padding-left: 15px;
+    padding-left: 10%;
     background-color: #000;
     color: #fff;
     box-shadow: 1px 1px 3px 2px #aaaaaa;
@@ -74,8 +74,12 @@ h4 {
   margin: 0 aut0;
 }
 
+ul {
+  list-style-type: circle;
+}
 footer {
     justify-content: center; /* align items on the main axis */
+    font-size: 12px;
 }
 
 @media only screen and (max-width: 800px) {

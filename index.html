@@ -25,24 +25,59 @@
 		<h3>This app can help!</h3>
 		<br>
         <br>
-      <form action="/action_page.php">
-        <label for="cars">Choose a Cuisine:</label>
-        <select name="cars" id="cars">
+      <form>
+        <label for="cuisine">Choose a Cuisine:</label>
+        <select name="cuisine" id="cuisine">
+            <option value="Default">Select a Cuisine</option>
             <option value="American">American</option>
-            <option value="Italian">Italian</option>
+            <option value="British">British</option>
+            <option value="Canadian">Canadian</option>
             <option value="Chinese">Chinese</option>
-            <option value="Japanese">Japanese</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Egyptian">Egyptian</option>
+            <option value="French">French</option>
+            <option value="Greek">Greek</option>
+            <option value="Indian">Indian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Jamaican">Jamaican</option>
+            <option value="Kenyan">Kenyan</option>
+            <option value="Malaysian">Malaysian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Moroccan">Moroccan</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Russian">Russian</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Thai">Thai</option>
+            <option value="Tunisian">Tunisian</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Vietnamese">Vietnamese</option>
         </select>
-        <label for="cars">Choose a Food:</label>
-        <select name="cars" id="cars">
-            <option value="chicken">Chicken</option>
-            <option value="beef">Beef</option>
-            <option value="pork">Pork</option>
-            <option value="seafood">Seafood</option>
+        <button id="submit-cuisine">Submit</button>     
+        <br>
+        <label for="category">Choose a Category:</label>
+        <select name="category" id="category">
+          <option value="Default">Select a Category</option>
+          <option value="Beef">Beef</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Goat">Goat</option>
+          <option value="Lamb">Lamb</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Pork">Pork</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Side">Side</option>
+          <option value="Starter">Starter</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Vegetarian">Vegetarian</option>
         </select>
+        <button id="submit-category">Submit</button>   
         <br><br>
-        <input id="submit" type="submit" value="I'm hungry! Give me food already!">
+   
       </form>
+      <div id="test"></div>
         <br><br>
         <p>Still can't decide? That's alright, click the button below for a random meal!</p>
         <br>
