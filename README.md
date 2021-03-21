@@ -11,8 +11,8 @@ An app that generates a recipe either randomly, or with a selected category, to 
 
 ## Screenshots
 
-![Initial Page](./img/wireframe1.png)
-![Page after Render](./img/wireframe2.png)
+![Initial Page](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe1.PNG)
+![Page after Render](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe2.PNG)
 
 ## Getting Started
 Click [here](https://cocampo0915.github.io/Project-1-Web-App/) to view the app
