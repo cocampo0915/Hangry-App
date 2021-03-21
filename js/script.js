@@ -129,7 +129,7 @@ function render(data) {
     }
   }
   $ingredients.html(`
-  <h4>Ingredients:</h4>
+  <h4>Ingredients</h4>
   <ul>
   ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
   </ul>
@@ -139,7 +139,7 @@ function render(data) {
   let recipeInstructions = recipe.strInstructions;
   recipeInstructions = recipeInstructions.replace(/(?:\r\n|\r|\n)/g, '<br>'); // string has regex expressions, replace with <br> html tag so it formats properly
   $recipeInstructions.html(`
-  <h4>Instructions:</h4>
+  <h4>Instructions</h4>
   <p>${recipeInstructions}</p>
   `);
 

@@ -1,5 +1,6 @@
 /* reset css */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Short+Stack&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,25 +8,30 @@
 }
 
 body {
-    font-family: 'Lato';
+    font-family: 'Noto Sans JP';
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #e6f5eb;
 }
 
 header, footer {
     display: flex;
     align-items: center; /* align items on the cross-axis */
-    height: 3rem;
+    height: 5rem;
 }
 
 header {
-    padding-left: 10%;
-    background-color: #000;
+    background-color: rgb(46, 112, 85);
     color: #fff;
     box-shadow: 1px 1px 3px 2px #aaaaaa;
 }
 
+h1 {
+    margin: auto;
+    font-size: 5vh;
+    font-family: 'Hachi Maru Pop';
+}
 main {
     flex-grow: 1;    /* pushes down footer, pushes up on header. creates our sticky footer*/
     display: flex;
@@ -34,6 +40,14 @@ main {
     justify-content: center;
     margin: 100px 0 0 0;
 }
+
+#user-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
 h4 {
   font-weight: bold;
   margin: 5px 0 5px 0;
@@ -71,7 +85,7 @@ h4 {
 }
 
 #recipe-ingredients {
-  margin: 0 aut0;
+  margin: 0 auto;
 }
 
 ul {

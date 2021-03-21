@@ -2,103 +2,108 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	 crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 
-	</script>
-	<script defer src="./js/script.js">
+    </script>
+    <script defer src="./js/script.js">
 
-	</script>
-	<title>Project 1 Web App</title>
+    </script>
+    <title>Project 1 Web App</title>
 </head>
 
 <body>
-	<header>
-		<h1>HANGRY APP</h1>
-	</header>
-	<main>
-		<h2>Can't decide what to make for dinner?</h2>
-		<h3>This app can help!</h3>
-		<br>
-        <br>
-      <form>
-        <label for="cuisine">Choose a Cuisine:</label>
-        <select name="cuisine" id="cuisine">
-            <option value="Default">Select a Cuisine</option>
-            <option value="American">American</option>
-            <option value="British">British</option>
-            <option value="Canadian">Canadian</option>
-            <option value="Chinese">Chinese</option>
-            <option value="Dutch">Dutch</option>
-            <option value="Egyptian">Egyptian</option>
-            <option value="French">French</option>
-            <option value="Greek">Greek</option>
-            <option value="Indian">Indian</option>
-            <option value="Irish">Irish</option>
-            <option value="Italian">Italian</option>
-            <option value="Jamaican">Jamaican</option>
-            <option value="Kenyan">Kenyan</option>
-            <option value="Malaysian">Malaysian</option>
-            <option value="Mexican">Mexican</option>
-            <option value="Moroccan">Moroccan</option>
-            <option value="Polish">Polish</option>
-            <option value="Portuguese">Portuguese</option>
-            <option value="Russian">Russian</option>
-            <option value="Spanish">Spanish</option>
-            <option value="Thai">Thai</option>
-            <option value="Tunisian">Tunisian</option>
-            <option value="Turkish">Turkish</option>
-            <option value="Vietnamese">Vietnamese</option>
-        </select>
-        <button id="submit-cuisine">Submit</button>     
-        <br>
-        <label for="category">Choose a Category:</label>
-        <select name="category" id="category">
-          <option value="Default">Select a Category</option>
-          <option value="Beef">Beef</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Chicken">Chicken</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Goat">Goat</option>
-          <option value="Lamb">Lamb</option>
-          <option value="Pasta">Pasta</option>
-          <option value="Pork">Pork</option>
-          <option value="Seafood">Seafood</option>
-          <option value="Side">Side</option>
-          <option value="Starter">Starter</option>
-          <option value="Vegan">Vegan</option>
-          <option value="Vegetarian">Vegetarian</option>
-        </select>
-        <button id="submit-category">Submit</button>   
-        <br><br>
-   
-      </form>
-      <div id="test"></div>
-        <br><br>
-        <p>Still can't decide? That's alright, click the button below for a random meal!</p>
-        <br>
-        <button id='random-meal'>Random Meal</button>
+    <header>
+        <h1>I'm Hangry</h1>
+    </header>
+    <main>
+        <section id="user-input">
+            <h2>Can't decide what to make for dinner?</h2>
+            <h3>This app can help!</h3>
+            <br>
+            <br>
+            <form>
+                <label for="cuisine">Choose a Cuisine:</label>
+                <select name="cuisine" id="cuisine">
+                    <option value="Default">Select a Cuisine</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                    <option value="Canadian">Canadian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Egyptian">Egyptian</option>
+                    <option value="French">French</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Jamaican">Jamaican</option>
+                    <option value="Kenyan">Kenyan</option>
+                    <option value="Malaysian">Malaysian</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Moroccan">Moroccan</option>
+                    <option value="Polish">Polish</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Tunisian">Tunisian</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                </select>
+                <button id="submit-cuisine">Submit</button>
+                <br>
+                <label for="category">Choose a Category:</label>
+                <select name="category" id="category">
+                    <option value="Default">Select a Category</option>
+                    <option value="Beef">Beef</option>
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Chicken">Chicken</option>
+                    <option value="Dessert">Dessert</option>
+                    <option value="Goat">Goat</option>
+                    <option value="Lamb">Lamb</option>
+                    <option value="Pasta">Pasta</option>
+                    <option value="Pork">Pork</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Side">Side</option>
+                    <option value="Starter">Starter</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                </select>
+                <button id="submit-category">Submit</button>
+                <br><br>
+            </form>
+            <div id="test"></div>
+            <br><br>
+            <p>Still can't decide? That's alright, click the button below for a random meal!</p>
+            <br>
+            <button id='random-meal'>Random Meal</button>
+        </section>
+
         <br>
         <section id="api">
-          <div id="recipe-name"></div>
-          <div class="row" id="row1">
-            <div class="column" id="recipe-img"></div>
+            <div id="recipe-name"></div>
+            <div class="row" id="row1">
+                <div class="column" id="recipe-img"></div>
+                <br>
+                <div class="column" id="recipe-ingredients"></div>
+            </div>
+            <div class="row" id="row2">
+                <div id="recipe-instructions"></div>
+            </div>
             <br>
-            <div class="column" id="recipe-ingredients"></div> 
-          </div>
-          <div class="row" id="row2">
-            <div id="recipe-instructions"></div>
-          </div>
-          <br>
-          <div class="row" id="recipe-video"></div>
+            <div class="row" id="recipe-video">
+                <img src="./img/hungrycat.gif" alt="hungry cat">
+            </div>
         </section>
     </main>
     <footer>
         <p>All Rights Reserved &copy; Camille Ocampo 2021</p>
     </footer>
 </body>
+
 </html>
