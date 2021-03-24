@@ -6,10 +6,11 @@ const FILTER_CUISINE = '?a=';
 const FILTER_CATEGORY = '?c=';
 
 // STATE VARIABLES
-let userCuisine;
-let userCategory;
-let result;
-let finalUrl;
+let userCuisine; // <-- when added to CHOICE_URL, will get data from the correct API endpoint. Handles cuisine choice.
+let userCategory; // <-- when added to CHOICE_URL, will get data from the correct API endpoint. Handles category choice.
+let result; // <-- after fetch(data), this stores a randomly chosen meal ID from a category chosen by the user.
+let finalUrl; // <-- to make the final API call that pulls one recipe and all the data associated with it.
+let url;
 
 // CACHED ELEMENT REFERENCES
 const $recipeName = $('#recipe-name');
@@ -17,8 +18,6 @@ const $recipeImg = $('#recipe-img');
 const $recipeInstructions = $('#recipe-instructions');
 const $ingredients = $('#recipe-ingredients')
 const $recipeVideo = $('#recipe-video');
-const $cuisine = $('select[id="cuisine"]');
-const $test = $('#test');
 
 // EVENT LISTENERS
 $('#random-meal').on('click', randomMeal);
@@ -28,6 +27,7 @@ $('#submit-category').on('click', pullCategory);
 
 // FUNCTIONS
 
+// hits endpoint that gets a random recipe
 function randomMeal() {
   finalUrl = RANDOM_URL;
   getData();
@@ -37,34 +37,27 @@ function randomMeal() {
 $(document).ready(function () {
   $('#cuisine').change(function () {
     userCuisine = FILTER_CUISINE + $(this).val();
-    localStorage.setItem('cuisine', $(this).val());
   });
   $('#category').change(function () {
     userCategory = FILTER_CATEGORY + $(this).val();
-    localStorage.setItem('category', $(this).val());
   });
 });
 
 function pullCuisine() {
   event.preventDefault();
-  $.ajax(CHOICE_URL + userCuisine)
-    .then(
-      // SUCCESS
-      (data) => {
-        result = fetch(data);
-        // call function to handle fetch new api and render
-        finalUrl = ID_URL + result;
-        getData();
-      },
-      // FAILURE
-      (error) => {
-        console.log(error);
-      });
+  url = CHOICE_URL + userCuisine;
+  pullData();
 }
 
 function pullCategory() {
   event.preventDefault();
-  $.ajax(CHOICE_URL + userCategory)
+  url = CHOICE_URL + userCategory;
+  pullData();
+}
+
+function pullData() {
+  event.preventDefault();
+  $.ajax(url)
     .then(
       // SUCCESS
       (data) => {
@@ -79,22 +72,26 @@ function pullCategory() {
       });
 }
 
+
+//This function will fetch a collection of recipes based on user choice of category or cuisine, and then return a random item from the collection.
 function fetch(data) {
   const recipe = data['meals'];
-// place meal IDs into array
+  // place meal IDs from each item in the collection into an array
   const meals = [];
   for (let i = 0; i < recipe.length; i++) {
     meals.push(recipe[i].idMeal);
   }
-// select random value from ID array
+  // select a random value in the ID array
   let randomIdx = getRandomNumber(meals.length);
   return meals[randomIdx];
 }
 
+// Function to handle generating a random number within a range, for use in other functions 
 function getRandomNumber(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+// This function will make the final API call that pulls one recipe and all the data associated with it.
 function getData() {
   $.ajax(finalUrl)
     .then(
@@ -108,16 +105,18 @@ function getData() {
       });
 }
 
+// This function will handle placing the data pulled from the API call into the DOM.
 function render(data) {
-  const recipe = data["meals"][0]; // assign object call to a shorter variable for simpler call later
+  // assign object call to a shorter variable for simpler call later
+  const recipe = data["meals"][0];
+
   // for recipe name title
-  $recipeName.html(`
-  <h2>
-  ${recipe.strMeal}
-  </h2>`);
+  $recipeName.html(`<h2>${recipe.strMeal}</h2>`);
+
   // for recipe image
   $recipeImg.html(`
   <img src='${recipe.strMealThumb}' alt="meal image" height="400">`);
+
   // for recipe ingredients
   const ingredients = []; // Get all ingredients from object and assign to array
   for (let i = 1; i <= 20; i++) {
