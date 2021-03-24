@@ -20,3 +20,4 @@ Click <a href="https://cocampo0915.github.io/Project-1-Web-App/" target="_blank"
 ## Future Enhancements
 - Improve responsive layout for mobile devices.
 - Make JavaScript code more DRY.
+- Make site look prettier.
