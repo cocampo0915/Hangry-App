@@ -10,9 +10,12 @@ An app that generates a recipe either randomly, or with a selected category, to 
 - Google Fonts
 
 ## Screenshots
+![Initial Page](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/initialwebpage.PNG)
+![Page after Render](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/renderwebpage.PNG)
 
-![Initial Page](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe1.PNG)
-![Page after Render](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe2.PNG)
+### Wireframe
+![Initial Page Concept](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe1.PNG)
+![Page after Render Concept](https://raw.githubusercontent.com/cocampo0915/Project-1-Web-App/master/img/wireframe2.PNG)
 
 ## Getting Started
 Click <a href="https://cocampo0915.github.io/Project-1-Web-App/" target="_blank">here</a> to view the app
