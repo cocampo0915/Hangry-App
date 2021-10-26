@@ -124,7 +124,7 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
-  main {
+  #api, #user-input {
     width: 90%;
   }
 
