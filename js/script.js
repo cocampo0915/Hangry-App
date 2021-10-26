@@ -4,6 +4,8 @@ const CHOICE_URL = 'https://www.themealdb.com/api/json/v1/1/filter.php' // filte
 const ID_URL = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' // pulls by meal ID
 const FILTER_CUISINE = '?a=';
 const FILTER_CATEGORY = '?c=';
+const CUISINE_LIST = 'https://www.themealdb.com/api/json/v1/1/list.php?a=list';
+const CATEGORY_LIST = 'https://www.themealdb.com/api/json/v1/1/list.php?c=list';
 
 // STATE VARIABLES
 let userCuisine; // <-- when added to CHOICE_URL, will get data from the correct API endpoint. Handles cuisine choice.
@@ -35,6 +37,38 @@ function randomMeal() {
 
 // for capturing user selection from cuisine or category
 $(document).ready(function () {
+  $.ajax(CATEGORY_LIST)
+    .then(
+      // SUCCESS
+      (data) => {
+        const result = data['meals'];
+        const categories = [];
+        for (var i = 0; i < result.length; i++) {
+          categories.push(result[i].strCategory);
+        }
+        renderOptions(categories, $('#category'));
+      },
+      // FAILURE
+      (error) => {
+        console.log(error);
+      }
+    )
+  $.ajax(CUISINE_LIST)
+    .then(
+      // SUCCESS
+      (data) => {
+        const result = data['meals'];
+        const cuisines = [];
+        for (var i = 0; i < result.length; i++) {
+          cuisines.push(result[i].strArea);
+        }
+        renderOptions(cuisines, $('#cuisine'));
+      },
+      // FAILURE
+      (error) => {
+        console.log(error);
+      }
+    )
   $('#cuisine').change(function () {
     userCuisine = FILTER_CUISINE + $(this).val();
   });
@@ -106,6 +140,13 @@ function getData() {
 }
 
 // This function will handle placing the data pulled from the API call into the DOM.
+function renderOptions(data, type) {
+  type.html(`
+    ${data.map(e => `<option value=${e}>${e}</option>`).join('')}
+  `);
+}
+
+
 function render(data) {
   // assign object call to a shorter variable for simpler call later
   const recipe = data["meals"][0];
@@ -128,7 +169,7 @@ function render(data) {
     }
   }
   $ingredients.html(`
-  <h4>Ingredients</h4>
+  <h3>Ingredients</h3>
   <ul>
   ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
   </ul>
@@ -136,10 +177,14 @@ function render(data) {
 
   // for recipe instructions
   let recipeInstructions = recipe.strInstructions;
-  recipeInstructions = recipeInstructions.replace(/(?:\r\n|\r|\n)/g, '<br>'); // string has regex expressions, replace with <br> html tag so it formats properly
+  recipeInstructions = recipeInstructions.split(/(?:\r\n\r\n|\r\n|\r|\n)/g); // string has regex expressions, replace with <br> html tag so it formats properly
+  recipeInstructions = recipeInstructions.filter(instruction => !instruction.toLowerCase().includes('step'));
+  recipeInstructions = recipeInstructions.filter(instruction => instruction.length > 1);
   $recipeInstructions.html(`
-  <h4>Instructions</h4>
-  <p>${recipeInstructions}</p>
+  <h3>Instructions</h3>
+  <ol>
+    ${recipeInstructions.map(i => `<li class="instructions">${i}</li>`).join('')}
+  </ol>
   `);
 
   // for embed youtube video
